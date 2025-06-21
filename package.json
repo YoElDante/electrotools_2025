@@ -4,8 +4,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js",
-    "format": "prettier --write ."
+    "server": "node --watch server.js",
+    "format": "prettier --write .",
+    "scss": "sass --watch src/scss/main.scss:public/css/main.css",
+    "dev": "concurrently \"npm run server\" \npm run scss\""
   },
   "keywords": [],
   "author": "Dante Marcos Delprato",

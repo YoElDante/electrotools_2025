@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Metadatos -->
+  <%- include('../partials/meta.ejs')%>
+
+    <!-- links -->
+
+    <!--Custom Css-->
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <%- include('../partials/css.ejs')%>
+
+      <!-- Font -->
+      <link rel="" href="" />
+
+      <!--Icons-->
+      <script src="https://kit.fontawesome.com/28a6abd58f.js" crossorigin="anonymous"></script>
+
+      <!-- Titulo de la Pag -->
+      <title>ElectroTools - Login</title>
+
+
+      <script src="/js/loginValidations.js" defer></script>
+</head>
+
+<body>
+  <!-- Cuerpo -->
+
+  <header>
+    <!--Encabezados-->
+    <%- include('../partials/header.ejs')%>
+  </header>
+
+  <main id="main">
+    <!-- principal -->
+    <div class="conteiner">
+      <section class="login-conteiner">
+        <h1 class="heder-register">INICIAR SESIÓN</h1>
+        <form action="/users/login" method="post" class="form">
+
+          <div class="div-form">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" name="email" placeholder="Su Email" id="email" required>
+            <p class="error">
+              <% if (locals.errors && errors.email) { %>
+                <%= errors.email.msg %>
+                  <% } %>
+            </p>
+          </div>
+
+          <div class="div-form">
+            <i class="fa-solid fa-eye-slash"></i>
+            <input type="password" name="password" placeholder="Contraseña" id="password" required>
+            <p class="error">
+              <% if (locals.error) { %>
+                <%= error %>
+                  <% } %>
+            </p>
+          </div>
+
+          <div class="buttom-imput">
+            <button type="submit" class="buttom-register-login">Ingresar</button>
+          </div>
+
+          <div class="rememberMe">
+            <label for="rememberMe">Recuerdame!</label>
+            <input type="checkbox" name="rememberMe" id="rememberMe">
+          </div>
+
+        </form>
+        <div class="sinCuenta">
+          <p class="texto">¿No tiene una cuenta?</p>
+          <a class="texto" href="/users/register">Crear cuenta</a>
+          <a class="texto" href="/#">¿Olvidó su contraseña?</a>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <%- include('../partials/footer.ejs') %>
+  </footer>
+
+  <!-- Scrips -->
+
+</body>
+
+</html>

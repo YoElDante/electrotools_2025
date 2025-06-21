@@ -1,0 +1,69 @@
+<!-- Encabezado -->
+<!-- Logo pagina SVG -->
+<div class="svg-container-header">
+  <img src="/img/electroTools/svg/LogoAmarillo.svg" alt="">
+</div>
+
+<!-- Boton hamburgueza -->
+<div class="burger">
+
+  <input type="checkbox" id="toggle">
+  <label for="toggle" title="Menu Desplegable"><i class="fa-solid fa-bars"></i></label>
+
+  <div class="menus">
+
+    <nav class="userBar">
+
+      <!-- Menu de usuarios Sin Loguear-->
+      <% if (false) { %>
+        <!-- Cuando estas logueado, el boton que dice register debe mostrar tu nombre abajo -->
+        <!-- Al presionarlo debe enviarte al detalle del Usuario -->
+        <a href="/img/users/default.jpg" title="Ir a Datos Personales">
+          <span>Hola user</span>
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <!-- Cuando estas logueado, el boton de login ahora debe ser el boton de logout -->
+        <a href="/users/logout" title="Iniciar sesion">
+          <span>Desloguearse</span>
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+
+        <% } else { %>
+          <!-- Menu de usuarios Sin Loguear-->
+          <a href="/users/register#main" title="Registrate">
+            <span>Registrate</span>
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <a href="/users/login#main" title="Iniciar sesion">
+            <span>Logueate</span>
+            <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+          <% } %>
+
+    </nav>
+
+    <!-- Menu de busqueda -->
+    <form class="searchBar" method="get" action="">
+      <input type="text" name="searchBar" placeholder="¿Que estas buscando?">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Menu de navegacion -->
+    <nav class="navBar">
+      <ul type="none">
+        <li><a href="/#cajaherramientas">Herramientas</a></li>
+        <li><a href="/products">Productos</a></li>
+        <li><a href="/#ofertas">OFERTAS</a></li>
+        <li><a href="/#novedades">Novedades</a></li>
+        <li><a href="/#institucional">Institucional</a></li>
+        <li><a href="/#contacto">Contactanos</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</div>
+
+<!-- boton flotante carrito -->
+<div class="cart">
+  <a href="/products/cart" title="Tu carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+</div>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Metadatos -->
+  <%- include('../partials/meta.ejs')%>
+
+    <!-- links -->
+
+    <!--Custom Css-->
+    <%- include('../partials/css.ejs')%>
+      <link rel="stylesheet" href="/css/register.css" />
+
+      <!-- Font -->
+      <link rel="" href="" />
+
+      <!--Icons-->
+      <script src="https://kit.fontawesome.com/28a6abd58f.js" crossorigin="anonymous"></script>
+
+      <!-- Validaciones con JavaScript -->
+      <script src="/js/registerValidations.js" defer></script>
+
+      <!-- Titulo de la Pag -->
+      <title>ElectroTools - Registración</title>
+
+</head>
+
+<body>
+  <!-- Cuerpo -->
+
+  <header>
+    <!--Encabezados-->
+    <%- include('../partials/header.ejs')%>
+  </header>
+
+  <main id="main">
+    <!-- principal -->
+    <div class="conteiner">
+      <section class="form-conteiner">
+        <h1 class="heder-register">REGISTRO DE USUARIO</h1>
+        <form action="/users/register" method="post" class="form" enctype="multipart/form-data">
+
+          <fieldset>
+            <h2>Datos de la Cuenta</h2>
+            <div class="div-form">
+              <i class="fa-solid fa-envelope"></i>
+              <input required type="email" name="email" id="email" placeholder="Correo Electrónico"
+                value="<%= locals.oldData && oldData.email ? oldData.email : '' %>" autofocus>
+              <p class="error">
+                <% if (locals.errors && errors.email) { %>
+                  <%= errors.email.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-user"></i>
+              <input required type="text" name="username" placeholder="Nombre de Usuario" id="username"
+                value="<%= locals.oldData? oldData.username : null%>">
+              <p class="error">
+                <% if (locals.errors && errors.username) { %>
+                  <%= errors.username.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-eye-slash"></i>
+              <input type="password" name="password" placeholder="Contraseña" id="password" required>
+              <p class="error"></p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-eye-slash"></i>
+              <input type="password" name="confirmPassword" placeholder="Confirmar Contraseña" id="confirmPassword"
+                required>
+              <p class="error"></p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <h2>Datos de Usuario</h2>
+            <div class="div-form">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" name="firstname" placeholder="Nombre" id="firstname" required
+                value="<%= locals.oldData? oldData.firstname : null%>">
+              <p class="error">
+                <% if (locals.errors && errors.firstname) { %>
+                  <%= errors.firstname.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" name="lastname" placeholder="Apellido" id="lastname" required
+                value="<%= locals.oldData? oldData.lastname : null%>">
+              <p class="error">
+                <% if (locals.errors && errors.lastname) { %>
+                  <%= errors.lastname.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-calendar-days"></i>
+              <input type="date" name="birthday" placeholder="Fecha de nacimiento" id="birthday" required
+                value="<%= locals.oldData? oldData.birthday : null%>">
+              <p class="error">
+                <% if (locals.errors && errors.birthday) { %>
+                  <%= errors.birthday.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-phone"></i>
+              <input type="text" name="phone" placeholder="Teléfono" id="phone" required
+                value="<%= locals.oldData? oldData.phone : null%>">
+              <p class="error">
+                <% if (locals.errors && errors.phone) { %>
+                  <%= errors.phone.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" name="street" placeholder="Calle y Altura" id="street" required
+                value="<%= locals.oldData? oldData.street : null%>">
+              <p class="error">
+                <% if (locals.errors && errors.street) { %>
+                  <%= errors.street.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" name="city" placeholder="Ciudad" id="city" required
+                value="<%= locals.oldData? oldData.city : null%>">
+              <p class="error">
+                <% if (locals.errors && errors.city) { %>
+                  <%= errors.city.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" name="country" placeholder="País" id="country" required
+                value="<%= locals.oldData? oldData.country : null%>">
+              <p class="error">
+                <% if (locals.errors && errors.country) { %>
+                  <%= errors.country.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <div class="div-form">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" name="zipcode" placeholder="Código Postal" id="zipcode" required
+                value="<%= locals.oldData? oldData.zipcode : null%>">
+              <p class="error">
+                <% if (locals.errors && errors.zipcode) { %>
+                  <%= errors.zipcode.msg %>
+                    <% } %>
+              </p>
+            </div>
+
+            <h3>Tu avatar</h3>
+            <div class="div-form">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="file" name="image" placeholder="Imagen de Perfil" id="image">
+              <p class="error"></p>
+            </div>
+
+          </fieldset>
+
+          <div>
+            <button type="submit" class="buttom-register" id="buttom-imput">Registrarse</button>
+            <p class="error"></p>
+          </div>
+
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <%- include('../partials/footer.ejs') %>
+  </footer>
+
+  <!-- Scrips -->
+  <script src=""></script>
+
+</body>
+
+</html>

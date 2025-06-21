@@ -1,0 +1,51 @@
+<article class="tarjeta product">
+  <a href="/products/detail/1">
+
+    <h4>
+      <% if(product.name) { %>
+        <%= product.name %>
+          <% }else{ %>
+            <%= "No disponible" %>
+              <% } %>
+    </h4>
+
+    <div class="imgProducto">
+      <% if(true){ %>
+        <img src="/img/products/default.png" alt="Imagen de product.name">
+        <% }else{ %>
+          <img src="/img/products/default.png" alt="Imagen por defecto">
+          <% } %>
+    </div>
+
+    <div class="detalles">
+      <p class="marca">
+        <% if(product.productBrand.name) { %>
+          <%= product.productBrand.name %>
+            <% }else{ %>
+              <%= "No disponible" %>
+                <% } %>
+      </p>
+      <p class="modelo">
+        <% if(product.model) { %>
+          <%= product.model %>
+            <% }else{ %>
+              <%= "No disponible" %>
+                <% } %>
+      </p>
+    </div>
+
+    <i class="fa-solid fa-tags"></i>
+
+    <div class="precios">
+      <!--<p class="precioAnterior"></p>-->
+      <p class="precioActual">$
+        <% if(product.price) { %>
+          <%= product.price %>.-
+            <% }else{ %>
+              <%= "No disponible" %>
+                <% } %>
+      </p>
+    </div>
+
+  </a>
+</article>

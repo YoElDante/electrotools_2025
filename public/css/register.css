@@ -1,0 +1,218 @@
+/* ----------------- */
+/*       MAIN        */
+/* ----------------- */
+
+/*------Elements-------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset{
+    width: 90%;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+.conteiner {
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    background-image: url(../img/electroTools/fondos/FondoCirculitos.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-conteiner {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    height: 80%;
+    padding: 1rem 0.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    background-color: #dcdcdcde;
+    box-shadow: #000000 0px 0.1875rem 0.3125rem;
+    border: #000000 solid 3px;
+    text-align: center;
+}
+
+.heder-register {
+    text-align: center;
+    background-color: #dcdcdc00;
+    font-size: 20px;
+    margin: auto;
+    color: #ce9416;
+
+}
+
+.form {
+    display: flex;
+    height: 95%;
+    width: 100%;
+    justify-content: center;
+}
+
+.div-form {
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+    overflow: hidden;
+    border: #11111f5d solid 3px;
+    border-radius: 25px;
+    justify-content: right;
+}
+
+.div-form input {
+    display: flex;
+    width: 90%;
+    height: 2rem;
+    background: transparent;
+    outline: none;
+    color: #11111f;
+    font-size: 1.2rem;
+    border: transparent;
+}
+
+
+input#birthday {
+    display: flex;
+    justify-content: center;
+}
+
+input#image {
+    padding-top: 0.2rem;
+}
+
+input::placeholder {
+    color: rgba(17, 17, 31, 0.6);
+    font-size: 1.2rem;
+    align-items: center;
+    background: transparent;
+}
+
+.div-form i {
+    background: transparent;
+    margin: auto;
+    margin-left: 0.5rem;
+    justify-content: flex-start;
+    align-self: stretch;
+    cursor: pointer;
+    width: 5%;
+    color: #ffb81c;
+
+}
+
+div[id=buttom-imput]{
+    display: flex;
+    position:relative;
+    width: 60%;
+    justify-self: center;
+    margin-top: 1rem;
+}
+.buttom-register {
+    display: flex;
+    align-items: center;
+    background-color: #d19617;
+    justify-content: center;
+    width: 100%;
+    border-radius: 25px;
+    margin: 0.5rem;
+    height: 3rem;
+    border: #11111f solid 2px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    margin-top: 0.2rem;
+}
+
+/* ----------------- */
+/*   MEDIA QUERIES   */
+/* ----------------- */
+@media (min-width:445px) {
+
+    html {
+        font-size: 19px;
+    }
+
+    .heder-register {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media(max-height: 475px) {
+    .div-form {
+        margin: 5px 0;
+    }
+
+    .buttom-register {
+        top: 0px;
+    }
+}
+
+
+@media (min-width:580px) {
+
+    html {
+        font-size: 22px;
+    }
+
+}
+
+@media (min-width:710px) {
+    html {
+        font-size: 24px;
+    }
+
+    .heder-register {
+        font-size: 25px;
+    }
+
+    .form-conteiner {
+        /* padding: 20px 30px; */
+        max-width: 800px;
+        height: 80%;
+        width: 80%;
+    }
+
+    .form {
+        display: flex;
+        height: 90%;
+        justify-content: center;
+        margin-bottom: 5%;
+        margin: auto;
+    }
+
+}
+
+@media (min-width:975px) {
+
+    html {
+        font-size: 32px;
+    }
+
+    .form-conteiner {
+        display: flex;
+        height: 95%;
+        max-width: 750px;
+        /* max-height: 420px; */
+    }
+
+    .heder-register {
+        font-size: 1.7rem;
+    }
+
+    .form {
+        align-items: center;
+        width: 100%;
+    }
+}
