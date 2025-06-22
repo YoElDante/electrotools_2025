@@ -1,0 +1,44 @@
+// abstracts/_variables.scss
+
+// Colores
+:root {
+--color-primario: #ffb81c;        // Amarillo electro, para acentos y llamados a la acción
+--color-secundario: #11111f;      // Gris claro para textos secundarios
+--color-fondo: #dcdcdc;           // Fondo oscuro del footer o secciones
+--color-texto-principal: --color-secundario; // Texto principal usando gris claro
+
+
+--color-boton-claro: --color-primario;
+//--color-boton-claro-hover:;
+--color-boton-claro-texto: --color-secundario;
+
+--color-boton-oscuro: --color-secundario;
+//--color-boton-oscuro-hover:;
+--color-boton-oscuro-texto:--color-primario;
+
+// Imagen de fondo predeterminada
+--bg-imagen-predeterminada: url('/img/electroTools/fondos/FondoCirculitos.jpg');
+
+// Fuentes (ejemplo)
+--font-base: 'Roboto', sans-serif;
+--font-heading: 'Montserrat', sans-serif;
+
+// Tamaños base (ejemplo)
+--font-size-base: 16px;
+--line-height-base: 1.5;
+
+// Sombras (ejemplo)
+--text-swadow:2px 2px 3px black;
+--box-shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+
+// Tamaños de ViewPorts
+  /* Breakpoints */
+  --breakpoint-mobile-small-max: 479px;
+  --breakpoint-mobile-medium-min: 480px;
+  --breakpoint-mobile-large-min: 600px;
+  --breakpoint-tablet-portrait-min: 768px;
+  --breakpoint-tablet-landscape-min: 1025px;
+  --breakpoint-desktop-standard-min: 1280px;
+  --breakpoint-desktop-2k-min: 1440px;
+  --breakpoint-desktop-4k-min: 1920px;
+}
