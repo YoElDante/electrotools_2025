@@ -7,13 +7,14 @@
     "server": "node --watch server.js",
     "format": "prettier --write .",
     "scss": "sass --watch src/scss/main.scss:public/css/main.css",
-    "dev": "concurrently \"npm run server\" \npm run scss\""
+    "dev": "concurrently \"npm run server\" \"npm run scss\""
   },
   "keywords": [],
   "author": "Dante Marcos Delprato",
   "license": "MIT",
   "dependencies": {
     "compression": "^1.8.0",
+    "concurrently": "^9.2.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -21,7 +22,8 @@
     "express": "^4.18.2",
     "helmet": "^8.1.0",
     "http-errors": "^2.0.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "sass": "^1.89.2"
   },
   "devDependencies": {
     "prettier": "^3.5.3"

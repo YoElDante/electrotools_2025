@@ -28,17 +28,17 @@
 --line-height-base: 1.5;
 
 // Sombras (ejemplo)
---text-swadow:2px 2px 3px black;
---box-shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+--text-swadow:2px 2px 3px --color-secundario;
+--box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
 // Tamaños de ViewPorts
   /* Breakpoints */
-  --breakpoint-mobile-small-max: 479px;
-  --breakpoint-mobile-medium-min: 480px;
-  --breakpoint-mobile-large-min: 600px;
-  --breakpoint-tablet-portrait-min: 768px;
-  --breakpoint-tablet-landscape-min: 1025px;
-  --breakpoint-desktop-standard-min: 1280px;
-  --breakpoint-desktop-2k-min: 1440px;
-  --breakpoint-desktop-4k-min: 1920px;
+--breakpoint-mobile-small-max: 479px;
+--breakpoint-mobile-medium-min: 480px;
+--breakpoint-mobile-large-min: 600px;
+--breakpoint-tablet-portrait-min: 768px;
+--breakpoint-tablet-landscape-min: 1025px;
+--breakpoint-desktop-standard-min: 1280px;
+--breakpoint-desktop-2k-min: 1440px;
+--breakpoint-desktop-4k-min: 1920px;
 }
