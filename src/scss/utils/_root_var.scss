@@ -5,16 +5,16 @@
 --color-primario: #ffb81c;        // Amarillo electro, para acentos y llamados a la acción
 --color-secundario: #11111f;      // Gris claro para textos secundarios
 --color-fondo: #dcdcdc;           // Fondo oscuro del footer o secciones
---color-texto-principal: --color-secundario; // Texto principal usando gris claro
+--color-texto-principal: var(--color-fondo); // Texto principal usando gris claro
 
 
---color-boton-claro: --color-primario;
+--color-boton-claro: var(--color-primario);
 //--color-boton-claro-hover:;
---color-boton-claro-texto: --color-secundario;
+--color-boton-claro-texto: var(--color-secundario);
 
---color-boton-oscuro: --color-secundario;
+--color-boton-oscuro: var(--color-secundario);
 //--color-boton-oscuro-hover:;
---color-boton-oscuro-texto:--color-primario;
+--color-boton-oscuro-texto: var(--color-primario);
 
 // Imagen de fondo predeterminada
 --bg-imagen-predeterminada: url('/img/electroTools/fondos/FondoCirculitos.jpg');
@@ -28,7 +28,7 @@
 --line-height-base: 1.5;
 
 // Sombras (ejemplo)
---text-swadow:2px 2px 3px --color-secundario;
+--text-swadow:2px 2px 3px var(--color-secundario);
 --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
 // Tamaños de ViewPorts
