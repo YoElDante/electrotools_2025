@@ -28,9 +28,9 @@ figure, blockquote, dl, dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul, ol {
   list-style: none;
+  padding-inline-start: 0px;
 }
 
 /* Set core body defaults */
@@ -127,8 +127,43 @@ Other Version in CDN is
   --font-size-sm: clamp(0.875rem, 0.85rem + 0.2vw, 1rem); /* 14px–16px */
   --font-size-md: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); /* 16px–18px */
   --font-size-lg: clamp(1.125rem, 1rem + 0.4vw, 1.25rem); /* 18px–20px */
+  --font-size-title-sm: clamp(1.125rem, 1rem + 0.4vw, 1.25rem); /* 18px–20px */
   --font-size-title-md: clamp(1.5rem, 1.2rem + 1vw, 2rem); /* 24px–32px */
   --font-size-title-lg: clamp(2rem, 1.6rem + 1.5vw, 3rem); /* 32px–48px */
+}
+
+:root {
+  --shadow-sm: 0 1px 2px rgba(17, 17, 31, 0.05);
+  --shadow-md: 0 4px 6px rgba(17, 17, 31, 0.1);
+  --shadow-lg: 0 10px 15px rgba(17, 17, 31, 0.15);
+}
+
+:root {
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-fluid-sm: clamp(0.5rem, 1vw, 1rem);
+  --space-fluid-md: clamp(1rem, 2vw, 2rem);
+  --space-fluid-lg: clamp(1.5rem, 3vw, 3rem);
+}
+
+:root {
+  --border-pill: 0.125rem var(--color-primario) solid;
+}
+
+:root {
+  --z-botton: -1;
+  --z-base: 1;
+  --z-nvl2: 2;
+  --z-nvl3: 3;
+  --z-dropdown: 10;
+  --z-modal: 100;
+  --z-toast: 1000;
 }
 
 header {
@@ -534,100 +569,96 @@ header {
   text-align: center;
 }
 
-/* Identidad */
 .footer__identidad {
-  margin-top: 2rem;
+  padding-top: var(--space-fluid-sm);
+}
+
+.identidad__link {
+  position: relative;
+  z-index: var(--z-base);
 }
 
 .identidad__logo {
-  width: 12rem;
+  justify-self: center;
+  width: 15rem;
+  height: auto;
+  margin-bottom: -2rem;
 }
 
 .identidad__redes-sociales {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .identidad__redes-sociales-link {
-  text-decoration: none;
-  color: var(--color-primario);
-  position: relative;
-  bottom: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: var(--z-nvl3);
+  text-decoration: none;
+  color: var(--color-primario);
   margin: 0 0.5rem;
   width: 2rem;
   height: 2rem;
-  border: 0.125rem var(--color-primario) solid;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
+  border: var(--border-pill);
+  -webkit-border-radius: var(--radius-pill);
+  -moz-border-radius: var(--radius-pill);
+  -ms-border-radius: var(--radius-pill);
+  -o-border-radius: var(--radius-pill);
+  border-radius: var(--radius-pill);
 }
 
-/* Medios de Contacto */
 .footer__contacto {
   text-align: center;
-  margin: 0;
+  line-height: 1.5px;
+  line-height: clamp(var(--space-xxs), 0.25rem, var(--space-xs));
 }
 
 .contacto__title {
-  font-size: 1.5rem;
-  margin: 1rem;
+  font-size: var(--font-size-title-md);
   color: var(--color-primario);
 }
 
 .horario__title {
-  font-size: 1rem;
+  font-size: var(--font-size-title-sm);
 }
 
 .horario__dias {
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
 }
 
 .horario__hora {
-  font-size: 0.8rem;
-}
-
-.contacto {
-  margin: 1rem;
+  font-size: var(--font-size-sm);
 }
 
 .email__link {
   text-decoration: none;
   color: var(--color-texto-principal);
+  transition: color 0.3s ease-in-out;
+}
+.email__link:hover {
+  color: var(--color-primario);
 }
 
 .telefono__title {
-  font-size: 1rem;
+  font-size: var(--font-size-title-sm);
 }
 
 .telefono__numero {
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
 }
 
 /* Institucional */
-.institucional h4 {
+.footer__institucional {
+  padding: var(--space-fluid-md) var(--space-fluid-sm);
+}
+
+.institucional__title {
   font-size: 1.5rem;
-  margin: 1rem;
   color: var(--color-primario);
-}
-
-.institucional ul {
-  list-style: none;
-  display: block;
-  padding-inline-start: 0px;
-}
-
-.institucional ul li {
-  margin: 0;
 }
 
 /* Terceras Marcas */
@@ -635,46 +666,53 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  justify-content: space-around;
+  padding: var(--space-fluid-md) var(--space-fluid-sm);
 }
 
 .marcas__logo {
-  width: clamp(5rem, 20vw, 10rem);
+  width: clamp(2rem, 20%, 6rem);
 }
 
-.copyright {
+.footer__copyright {
   color: var(--color-primario);
   text-decoration: none;
-  position: relative;
-  top: 0.5rem;
   font-size: 0.5rem;
 }
 
 /* ----------------- */
 /*   MEDIA QUERIES   */
 /* ----------------- */
-@media (min-width: 580px) {
+/*
+@media (min-width:580px) {
+
   footer {
     padding: 0;
   }
+
   .main-footer {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
     justify-content: space-around;
   }
-  /* identidad */
+
+  // identidad
+
   .identidad img {
     width: 8rem;
     margin-top: -1rem;
   }
+
   .redesSociales {
-    /* @include flex-center; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  //@include flex-center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
+
   .redesSociales a {
+
     bottom: 1rem;
     display: flex;
     align-items: center;
@@ -683,35 +721,45 @@ header {
     width: 1.5rem;
     height: 1.5rem;
   }
+
   .redesSociales i {
     font-size: 0.75rem;
   }
-  /* Medios de Contacto */
+
+  //Medios de Contacto
+
   .contacto {
     width: 30%;
   }
+
   .contacto * {
     text-align: center;
     margin: 0;
   }
+
   .contacto h4 {
     font-size: 1rem;
     margin: 0.6rem;
   }
+
   .contacto h5 {
     font-size: 0.6rem;
   }
+
   .contacto p {
     font-size: 0.4rem;
   }
+
   .contacto div {
     margin: 0.6rem;
   }
+
   .email {
     justify-content: center;
   }
+
   .email a {
-    /* @include flex-center; */
+    //@include flex-center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -719,58 +767,78 @@ header {
     align-content: center;
     font-size: 0.5rem;
   }
+
+
   .telefono p {
     font-size: 0.6rem;
     font-weight: 600;
   }
-  /* Institucional */
+
+
+  //Institucional
+
   .institucional {
     text-align: left;
   }
+
   .institucional h4 {
     font-size: 1rem;
     margin: 0.6rem;
+
   }
+
   .institucional ul {
     list-style: none;
     display: block;
     padding-inline-start: 0px;
     margin: 0;
   }
+
   .institucional ul li {
     font-size: 0.5rem;
     margin: 0.5rem 0.6rem;
     font-weight: 600;
+
   }
+
   .copyright {
     position: relative;
     top: 0;
     font-size: 0.5rem;
   }
 }
-/* ----------------(-- */
+*/
+/* ------------------ */
 /* MEDIA QUERY 710 PX */
-/* ----------------(-- */
-@media (min-width: 710px) {
+/* ------------------ */
+/*
+@media (min-width:710px) {
+
   footer {
     padding: 0;
   }
+
   footer section article {
     margin-top: 0.5rem;
   }
+
   .main-footer {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
     justify-content: space-around;
   }
-  /* identidad */
+
+  //identidad
+
   .identidad img {
     width: 6rem;
     margin-top: -0.6rem;
   }
+
+
   .redesSociales a {
-    /* @include flex-center; */
+    //@include flex-center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -780,53 +848,77 @@ header {
     height: 1rem;
     border: 0.0625rem varvar(--color-primario) solid;
   }
+
   .redesSociales i {
     font-size: 0.5rem;
   }
-  /* Medios de Contacto */
+
+  //Medios de Contacto
+
   .contacto h4 {
     font-size: 0.8rem;
     margin: 0.6em;
   }
+
   .contacto h5 {
     font-size: 0.6rem;
   }
+
   .contacto p {
     font-size: 0.4rem;
   }
+
   .contacto div {
     margin: 0.6rem;
   }
+
+
   .telefono p {
     font-size: 0.6rem;
     font-weight: 600;
   }
-  /* Institucional */
+
+
+  //Institucional
+
   .institucional {
     text-align: left;
   }
+
   .institucional h4 {
     font-size: 0.8rem;
     margin: 0.6rem;
+
   }
+
   .institucional ul li {
     font-size: 0.6rem;
     margin: 0.5rem 0.6rem;
     font-weight: 600;
+
   }
-  /* Terceras Marcas */
-  .marcas {
-    justify-content: space-evenly;
-  }
-  .marcas img {
-    width: 2rem;
-    margin: 0.6rem;
-  }
+
+//Terceras Marcas
+
+.marcas {
+  justify-content: space-evenly;
+}
+
+.marcas img {
+  width: 2rem;
+  margin: 0.6rem;
+}
+
+
   .copyright {
     position: relative;
     top: 0;
     font-size: 0.5rem;
   }
+
 }
+
+@media (min-width:1200px) {}
+*/
 
 /*# sourceMappingURL=main.css.map */

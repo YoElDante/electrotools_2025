@@ -3,3 +3,30 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin z-position-base{
+  position: relative; 
+  z-index: var(--z-base);
+}
+@mixin z-position-back{
+  position: relative; 
+  z-index: var(--z-botton);
+}
+@mixin z-position-front{
+  position: relative; 
+  z-index: var(--z-nvl3);
+}
+@mixin z-position-dropdown{
+  position: relative; 
+  z-index: var(--z-dropdown);
+}
+@mixin z-position-modal{
+  position: relative; 
+  z-index: var(--z-modal);
+}
+@mixin z-position-toast{
+  position: relative; 
+  z-index: var(--z-toast);
+}
+
+

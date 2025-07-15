@@ -9,129 +9,123 @@
   color: var(--color-texto-principal);
   text-align: center;
 }
-/* Identidad */
 
 .footer__identidad {
-  margin-top: 2rem;
+  padding-top: var(--space-fluid-sm);
 }
 
+.identidad__link{
+  @include mixins.z-position-base;
+}
 
 .identidad__logo {
-  width: 12rem;
+  justify-self: center;
+  width: 15rem;
+  height: auto;
+  margin-bottom:-2rem;
 }
 
 .identidad__redes-sociales {
   @include mixins.flex-center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .identidad__redes-sociales-link {
+  @include mixins.flex-center;
+  @include mixins.z-position-front;
   text-decoration: none;
   color: var(--color-primario);
-  position: relative;
-  bottom: 1.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 0.5rem;
   width: 2rem;
   height: 2rem;
-  border: 0.125rem var(--color-primario) solid;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
+  border: var(--border-pill);
+  -webkit-border-radius: var(--radius-pill);
+  -moz-border-radius: var(--radius-pill);
+  -ms-border-radius: var(--radius-pill);
+  -o-border-radius: var(--radius-pill);
+  border-radius: var(--radius-pill);
 }
 
-/* Medios de Contacto */
+// Medios de Contacto
 
 .footer__contacto {
   text-align: center;
-  margin: 0;
+  line-height: 1.5px;
+  line-height: clamp(var(--space-xxs),0.25rem,var(--space-xs));
 }
 
 .contacto__title {
-  font-size: 1.5rem;
-  margin: 1rem;
+  font-size: var(--font-size-title-md);
   color: var(--color-primario);
 }
 
 .horario__title {
-  font-size: 1rem;
+  font-size: var(--font-size-title-sm);
 }
 
 .horario__dias {
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
 }
 .horario__hora {
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
 }
 
-.contacto{
-  margin: 1rem
-}
 
 .email__link {
   text-decoration: none;
   color: var(--color-texto-principal);
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--color-primario); 
+  }
 }
 
 .telefono__title {
-  font-size: 1rem;
+  font-size: var(--font-size-title-sm);
 }
 
 .telefono__numero {
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
 }
 
 
 /* Institucional */
+.footer__institucional{
+  padding: var(--space-fluid-md) var(--space-fluid-sm);
+}
 
-.institucional h4 {
+.institucional__title {
   font-size: 1.5rem;
-  margin: 1rem;
   color: var(--color-primario);
-}
-
-.institucional ul {
-  list-style: none;
-  display: block;
-  padding-inline-start: 0px;
-}
-
-.institucional ul li {
-  margin: 0;
 }
 
 
 /* Terceras Marcas */
 .footer__marcas {
   @include mixins.flex-center;
-  width: 80%;
+  justify-content: space-around;
+  padding: var(--space-fluid-md) var(--space-fluid-sm);
 }
 
 .marcas__logo {
-  width: clamp(5rem,20vw,10rem);
+  width: clamp(2rem,20%,6rem);
 }
 
 
-.copyright {
+.footer__copyright {
   color: var(--color-primario);
   text-decoration: none;
-  position: relative;
-  top: 0.5rem;
   font-size: 0.5rem;
 }
+
+
 
 /* ----------------- */
 /*   MEDIA QUERIES   */
 /* ----------------- */
 
-
+/*
 @media (min-width:580px) {
 
   footer {
@@ -145,7 +139,7 @@
     justify-content: space-around;
   }
 
-  /* identidad */
+  // identidad
 
   .identidad img {
     width: 8rem;
@@ -153,7 +147,7 @@
   }
 
   .redesSociales {
-  /* @include flex-center; */
+  //@include flex-center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,7 +168,7 @@
     font-size: 0.75rem;
   }
 
-  /* Medios de Contacto */
+  //Medios de Contacto
 
   .contacto {
     width: 30%;
@@ -207,7 +201,7 @@
   }
 
   .email a {
-    /* @include flex-center; */
+    //@include flex-center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,7 +217,7 @@
   }
 
 
-  /* Institucional */
+  //Institucional
 
   .institucional {
     text-align: left;
@@ -255,12 +249,12 @@
     font-size: 0.5rem;
   }
 }
-
-/* ----------------(-- */
+*/
+/* ------------------ */
 /* MEDIA QUERY 710 PX */
-/* ----------------(-- */
+/* ------------------ */
 
-
+/*
 @media (min-width:710px) {
 
   footer {
@@ -278,7 +272,7 @@
     justify-content: space-around;
   }
 
-  /* identidad */
+  //identidad
 
   .identidad img {
     width: 6rem;
@@ -287,7 +281,7 @@
 
 
   .redesSociales a {
-    /* @include flex-center; */
+    //@include flex-center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -302,7 +296,7 @@
     font-size: 0.5rem;
   }
 
-  /* Medios de Contacto */
+  //Medios de Contacto
 
   .contacto h4 {
     font-size: 0.8rem;
@@ -328,7 +322,7 @@
   }
 
 
-  /* Institucional */
+  //Institucional
 
   .institucional {
     text-align: left;
@@ -347,7 +341,7 @@
 
   }
 
-/* Terceras Marcas */
+//Terceras Marcas
 
 .marcas {
   justify-content: space-evenly;
@@ -368,3 +362,4 @@
 }
 
 @media (min-width:1200px) {}
+*/
