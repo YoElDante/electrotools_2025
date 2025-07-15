@@ -1,1 +1,7 @@
-@use 'design-system' as *;
+@use 'design-system';
+@use 'base';
+@use 'layout';
+@use 'components';
+@use 'pages';
+@use 'themes';
+@use 'vendors';

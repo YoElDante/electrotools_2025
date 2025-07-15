@@ -1,0 +1,22 @@
+:root {
+
+  /* COLORES */
+--color-primario: #ffb81c;        // Amarillo electro, para acentos y llamados a la acción
+--color-secundario: #11111f;      // Gris claro para textos secundarios
+--color-fondo: #dcdcdc;           // Fondo oscuro del footer o secciones
+--color-texto-principal: var(--color-fondo); // Texto principal usando gris claro
+
+
+--color-boton-claro: var(--color-primario);
+//--color-boton-claro-hover:;
+--color-boton-claro-texto: var(--color-secundario);
+
+--color-boton-oscuro: var(--color-secundario);
+//--color-boton-oscuro-hover:;
+--color-boton-oscuro-texto: var(--color-primario);
+
+
+/* Imagen de fondo predeterminada */
+--bg-imagen-predeterminada: url('/img/electroTools/fondos/FondoCirculitos.jpg');
+
+}

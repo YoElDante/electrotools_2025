@@ -1,0 +1,5 @@
+:root {
+  --radius: clamp(4px, 1vw, 16px);
+  --radius-pill: 9999px; // útil para chips, botones redondos, etc.
+  --radius-card: var(--radius);
+}

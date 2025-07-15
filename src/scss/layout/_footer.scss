@@ -1,3 +1,5 @@
+@use '../utils/mixins' as mixins;
+
 /* ----------------- */
 /*      FOOTER       */
 /* ----------------- */
@@ -6,7 +8,6 @@
   background-color: var(--color-secundario);
   color: var(--color-texto-principal);
   text-align: center;
-  padding: 1rem;
 }
 /* Identidad */
 
@@ -20,7 +21,7 @@
 }
 
 .identidad__redes-sociales {
-  @include flex-center;
+  @include mixins.flex-center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,16 +109,13 @@
 
 
 /* Terceras Marcas */
-.marcas {
-  /* @include flex-center; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.footer__marcas {
+  @include mixins.flex-center;
+  width: 80%;
 }
 
-.marcas img {
-  width: 3rem;
-  margin: 1rem;
+.marcas__logo {
+  width: clamp(5rem,20vw,10rem);
 }
 
 
