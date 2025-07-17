@@ -1,14 +1,12 @@
-:root{
-  // Tamaños de ViewPorts
-  /* Breakpoints */
-  --breakpoint-mobile-small-max: 479px;
-  --breakpoint-mobile-medium-min: 480px;
-  --breakpoint-mobile-large-min: 600px;
-  
-  --breakpoint-tablet-portrait-min: 768px;
-  --breakpoint-tablet-landscape-min: 1025px;
-  
-  --breakpoint-desktop-standard-min: 1280px;
-  --breakpoint-desktop-2k-min: 1440px;
-  --breakpoint-desktop-4k-min: 1920px;
-}
+// _breakpoints.scss
+
+$breakpoints: (
+  "mobile-small-max": 479px,
+  "mobile-medium-min": 480px,
+  "mobile-large-min": 600px,
+  "tablet-portrait-min": 768px,
+  "tablet-landscape-min": 1025px,
+  "desktop-standard-min": 1280px,
+  "desktop-2k-min": 1440px,
+  "desktop-4k-min": 1920px
+);

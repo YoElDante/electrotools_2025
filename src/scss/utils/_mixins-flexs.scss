@@ -1,0 +1,6 @@
+//Posicion interna de los elementos
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

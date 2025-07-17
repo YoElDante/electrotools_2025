@@ -12,4 +12,6 @@
   --font-size-title-sm: clamp(1.125rem, 1rem + 0.4vw, 1.25rem);   /* 18px–20px */
   --font-size-title-md: clamp(1.5rem, 1.2rem + 1vw, 2rem);        /* 24px–32px */
   --font-size-title-lg: clamp(2rem, 1.6rem + 1.5vw, 3rem);        /* 32px–48px */
+
+  --line-hg: clamp(var(--space-xxs),0.25rem,var(--space-xs));
 }

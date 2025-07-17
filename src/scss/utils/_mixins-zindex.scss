@@ -1,9 +1,4 @@
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+//Posiciones relativas de los elementos
 @mixin z-position-base{
   position: relative; 
   z-index: var(--z-base);
@@ -28,5 +23,3 @@
   position: relative; 
   z-index: var(--z-toast);
 }
-
-
