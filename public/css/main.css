@@ -100,6 +100,7 @@ Other Version in CDN is
   /* COLORES */
   --color-primario: #ffb81c;
   --color-secundario: #11111f;
+  --color-secundario-transp: rgba(17, 17, 31, 0.5);
   --color-fondo: #dcdcdc;
   --color-texto-principal: var(--color-fondo);
   --color-boton-claro: var(--color-primario);
@@ -168,14 +169,13 @@ Other Version in CDN is
 }
 
 header {
-  background-color: rgb(16, 16, 30);
-  padding-bottom: 2rem;
+  background-color: var(--color-secundario);
 }
 
 /* --------------- */
 /*  Logo en svg ⚡ */
 /* --------------- */
-.svg-container-header {
+.header__logo--svg {
   width: 75vw;
   margin: 0 auto;
   margin-top: -2rem;
@@ -186,7 +186,7 @@ header {
 /* --------------------- */
 /*  Boton hamburguesa 🍔 */
 /* --------------------- */
-.burger {
+.header__burger {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -194,13 +194,13 @@ header {
   position: relative;
 }
 
-.burger label {
+.burger__button {
   text-align: center;
   cursor: pointer;
   font-size: 1.5rem;
-  color: #ffb81c;
+  color: var(--color-primario);
   padding: 0.625rem 1rem;
-  border: solid 0.125rem #ffb81c;
+  border: solid 0.125rem var(--color-primario);
   border-radius: 0.625rem;
   -webkit-border-radius: 0.625rem;
   -moz-border-radius: 0.625rem;
@@ -208,20 +208,18 @@ header {
   -o-border-radius: 0.625rem;
 }
 
-#toggle {
+.burger__checkbox--toggle {
   position: absolute;
   visibility: hidden;
 }
-
-#toggle:checked ~ .menus {
+.burger__checkbox--toggle:checked ~ .menus {
   display: block;
 }
-
-#toggle:not(:checked) ~ .menus {
+.burger__checkbox--toggle:not(:checked) ~ .menus {
   display: none;
 }
 
-.menus {
+.header__menu {
   margin-top: 2rem;
   width: 100vw;
 }
@@ -230,7 +228,7 @@ header {
 /*    Menu Usuario 👷‍♂️  */
 /* ------------------- */
 /* Menu Usuarios */
-.userBar {
+.menu__userBar {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -240,18 +238,18 @@ header {
   padding-left: 0;
 }
 
-.userBar a {
+.userBar__link {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   text-decoration: none;
-  color: #dcdcdc;
+  color: var(--color-texto-principal);
   font-weight: bold;
 }
 
-.userBar i {
+.userBar__icon {
   font-size: 1.5rem;
   margin-bottom: 0.3125rem;
 }
@@ -259,35 +257,39 @@ header {
 /* ---------------------- */
 /*  Barra de Busqueda 🔍 */
 /* ---------------------- */
-.searchBar {
+.menu__searchBar {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  justify-self: center;
+  align-self: center;
 }
 
-.searchBar input {
+.searchBar__input-text {
   width: 75%;
   padding: 0.8rem;
-  border: solid 0.125px #ffb81c;
+  border: solid 0.125px var(--color-primario);
   border-radius: 0.3125rem;
-  color: #11111f;
+  color: var(--color-secundario);
   -webkit-border-radius: 0.3125rem;
   -moz-border-radius: 0.3125rem;
   -ms-border-radius: 0.3125rem;
   -o-border-radius: 0.3125rem;
+  justify-self: center;
+  align-self: center;
 }
 
-.searchBar input::placeholder {
-  color: rgba(17, 17, 31, 0.5);
+.searchBar__input-text::placeholder {
+  color: var(-color-secundario-transp);
   font-size: 1rem;
 }
 
 /* boton de buscar */
-.searchBar button {
+.searchBar__button {
   padding: 0.2rem;
-  background-color: #dcdcdc;
-  border: solid 1px #ffb81c;
+  background-color: var(--color-fondo);
+  border: solid 1px var(--color-primario);
   font-size: 1rem;
   margin-left: 0.625rem;
   border-radius: 0.3125rem;
@@ -296,24 +298,23 @@ header {
   -ms-border-radius: 0.3125rem;
   -o-border-radius: 0.3125rem;
 }
-
-.searchBar button:hover {
-  background-color: #ffb81c;
+.searchBar__button:hover {
+  background-color: var(--color-primario);
 }
 
 /* ----------------------- */
 /*  Menu de navegacion ⛵ */
 /* ----------------------- */
-.navBar {
+.menu__navBar {
   font-size: 1.2rem;
   text-align: center;
   padding-top: 1rem;
   font-weight: bold;
 }
 
-.navBar a {
+.navBar__option {
   text-decoration: none;
-  color: #dcdcdc;
+  color: var(-color-texto-principal);
 }
 
 .navBar ul {
@@ -328,13 +329,17 @@ header {
 /* ------------------ */
 /*  Boton Carrito 🛒 */
 /* ------------------ */
-.cart {
+.header__cart--pill {
+  /*
+  @include ds.pill-button;
+  */
+  color: var(--color-primario);
   font-size: 1.5rem;
-  background-color: #11111f;
+  background-color: var(--color-secundario);
   position: fixed;
   top: 0.625rem;
   right: 0.625rem;
-  border: solid 0.125rem #ffb81c;
+  border: solid 0.125rem var(--color-primario);
   border-radius: 50%;
   padding: 0.8rem;
   margin: 0px;
@@ -345,13 +350,17 @@ header {
   -o-border-radius: 50%;
 }
 
-.cart a {
+.cart--pill__link {
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   position: relative;
   right: 0.0625rem;
+}
+
+.cart--pill__icon {
+  color: var(--color-primario);
 }
 
 /* ----------------- */
@@ -367,7 +376,7 @@ header {
   /* --------------- */
   /*  Logo en svg ⚡ */
   /* --------------- */
-  .svg-container-header {
+  .header__logo--svg {
     width: 10rem;
     padding-top: 1rem;
     top: 0.5rem;
@@ -487,7 +496,7 @@ header {
   /* --------------- */
   /*  Logo en svg ⚡ */
   /* --------------- */
-  .svg-container-header {
+  .header__logo--svg {
     width: 6rem;
     padding-top: 1rem;
     top: 0.5rem;

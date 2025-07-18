@@ -1,63 +1,66 @@
 <header>
   <!-- Encabezado -->
   <!-- Logo pagina SVG -->
-  <div class="svg-container-header">
+  <div class="header__logo--svg">
     <img src="/img/electroTools/svg/LogoAmarillo.svg" alt="">
   </div>
 
   <!-- Boton hamburgueza -->
-  <div class="burger">
+  <div class="header__burger">
 
-    <input type="checkbox" id="toggle">
-    <label for="toggle" title="Menu Desplegable"><i class="fa-solid fa-bars"></i></label>
+    <input class="burger__checkbox--toggle" type="checkbox" id="toggle">
 
-    <div class="menus">
+    <label class="burger__button" for="toggle" title="Menu Desplegable">
+      <i class="fa-solid fa-bars"></i>
+    </label>
 
-      <nav class="userBar">
+    <div class="header__menu">
+
+      <nav class="menu__userBar">
 
         <!-- Menu de usuarios Sin Loguear-->
         <% if (false) { %>
-          <!-- Cuando estas logueado, el boton que dice register debe mostrar tu nombre abajo -->
-          <!-- Al presionarlo debe enviarte al detalle del Usuario -->
-          <a href="/img/users/default.jpg" title="Ir a Datos Personales">
-            <span>Hola user</span>
-            <i class="fa-solid fa-user"></i>
-          </a>
-          <!-- Cuando estas logueado, el boton de login ahora debe ser el boton de logout -->
-          <a href="/users/logout" title="Iniciar sesion">
-            <span>Desloguearse</span>
-            <i class="fa-solid fa-right-from-bracket"></i>
-          </a>
+        <!-- Cuando estas logueado, el boton que dice register debe mostrar tu nombre abajo -->
+        <!-- Al presionarlo debe enviarte al detalle del Usuario -->
+        <a href="/img/users/default.jpg" title="Ir a Datos Personales">
+          <span>Hola user</span>
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <!-- Cuando estas logueado, el boton de login ahora debe ser el boton de logout -->
+        <a href="/users/logout" title="Iniciar sesion">
+          <span>Desloguearse</span>
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
 
-          <% } else { %>
-            <!-- Menu de usuarios Sin Loguear-->
-            <a href="/users/register#main" title="Registrate">
-              <span>Registrate</span>
-              <i class="fa-solid fa-user"></i>
-            </a>
-            <a href="/users/login#main" title="Iniciar sesion">
-              <span>Logueate</span>
-              <i class="fa-solid fa-right-to-bracket"></i>
-            </a>
-            <% } %>
+        <% } else { %>
+        <!-- Menu de usuarios Sin Loguear-->
+        <a class="userBar__link userBar__link--register" href="/users/register#main" title="Registrate">
+          <span>Registrate</span>
+          <i class="fa-solid fa-user userBar__icon userBar__icon--register"></i>
+        </a>
+        <a class="userBar__link userBar__link--login" href="/users/login#main" title="Iniciar sesion">
+          <span>Logueate</span>
+          <i class="fa-solid fa-right-to-bracket userBar__icon userBar__icon--login"></i>
+        </a>
+        <% } %>
 
       </nav>
 
       <!-- Menu de busqueda -->
-      <form class="searchBar" method="get" action="">
-        <input type="text" name="searchBar" placeholder="¿Que estas buscando?">
-        <button type="submit">Buscar</button>
+      <form class="menu__searchBar" method="get" action="">
+        <input class="searchBar__input-text" type="text" name="searchBar" placeholder="¿Que estas buscando?">
+        <button class="searchBar__button" type="submit">Buscar</button>
       </form>
 
       <!-- Menu de navegacion -->
-      <nav class="navBar">
-        <ul type="none">
-          <li><a href="/#cajaherramientas">Herramientas</a></li>
-          <li><a href="/products">Productos</a></li>
-          <li><a href="/#ofertas">OFERTAS</a></li>
-          <li><a href="/#novedades">Novedades</a></li>
-          <li><a href="/#institucional">Institucional</a></li>
-          <li><a href="/#contacto">Contactanos</a></li>
+      <nav class="menu__navBar">
+        <ul class="navBar__options" type="none">
+          <li><a class="navBar__option" href="/#cajaherramientas">Herramientas</a></li>
+          <li><a class="navBar__option" href="/products">Productos</a></li>
+          <li><a class="navBar__option" href="/#ofertas">OFERTAS</a></li>
+          <li><a class="navBar__option" href="/#novedades">Novedades</a></li>
+          <li><a class="navBar__option" href="/#institucional">Institucional</a></li>
+          <li><a class="navBar__option" href="/#contacto">Contactanos</a></li>
         </ul>
       </nav>
     </div>
@@ -65,7 +68,9 @@
   </div>
 
   <!-- boton flotante carrito -->
-  <div class="cart">
-    <a href="/products/cart" title="Tu carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+  <div class="header__cart--pill">
+    <a class="cart--pill__link" href="/products/cart" title="Tu carrito">
+      <i class="cart--pill__icon fa-solid fa-cart-shopping"></i>
+    </a>
   </div>
 </header>
