@@ -111,6 +111,22 @@ Other Version in CDN is
   --bg-imagen-predeterminada: url("/img/electroTools/fondos/FondoCirculitos.jpg");
 }
 
+/*
+Para acceder a un elemento del map 
+se llama al modulo con @use "sass:map";
+
+@use "sass:map";
+
+$mapa: (
+  "primario": red, 
+  "secundario": blue
+);
+
+.color {
+  color: map.get($mapa, "primario"); 
+  //Resultado: red
+}
+*/
 :root {
   --radius: clamp(4px, 1vw, 16px);
   --radius-pill: 9999px;
@@ -177,10 +193,8 @@ header {
 /* --------------- */
 .header__logo--svg {
   width: 75vw;
-  margin: 0 auto;
-  margin-top: -2rem;
-  margin-bottom: -2rem;
-  z-index: 9999;
+  margin: -2rem auto;
+  padding: var(--space-md);
 }
 
 /* --------------------- */
@@ -188,9 +202,9 @@ header {
 /* --------------------- */
 .header__burger {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: relative;
 }
 
@@ -230,7 +244,7 @@ header {
 /* Menu Usuarios */
 .menu__userBar {
   display: flex;
-  width: 100%;
+  width: 80%;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;

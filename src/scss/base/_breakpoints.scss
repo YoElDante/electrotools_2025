@@ -10,3 +10,20 @@ $breakpoints: (
   "desktop-2k-min": 1440px,
   "desktop-4k-min": 1920px
 );
+
+/*
+Para acceder a un elemento del map 
+se llama al modulo con @use "sass:map";
+
+@use "sass:map";
+
+$mapa: (
+  "primario": red, 
+  "secundario": blue
+);
+
+.color {
+  color: map.get($mapa, "primario"); 
+  //Resultado: red
+}
+*/

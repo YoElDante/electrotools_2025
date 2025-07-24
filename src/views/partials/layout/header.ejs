@@ -1,0 +1,59 @@
+<header>
+  <!-- Encabezado -->
+  <!-- Logo pagina SVG -->
+  <div class="header__logo--svg">
+    <img src="/img/electroTools/svg/LogoAmarillo.svg" alt="">
+  </div>
+
+  <!-- Boton hamburgueza -->
+  <div class="header__burger">
+
+    <input class="burger__checkbox--toggle" type="checkbox" id="toggle">
+
+    <label class="burger__button" for="toggle" title="Menu Desplegable">
+      <i class="fa-solid fa-bars"></i>
+    </label>
+
+    <div class="header__menu">
+
+      <nav class="menu__userBar">
+
+        <!-- Menu de usuarios Sin Loguear-->
+        <% if (false) { %>
+
+        <% include('./header-logged-in.ejs')  %>
+        <% } else { %>
+        <!-- Menu de usuarios Sin Loguear-->
+        <% include('./header-guest.ejs') %>
+        <% } %>
+
+      </nav>
+
+      <!-- Menu de busqueda -->
+      <form class="menu__searchBar" method="get" action="">
+        <input class="searchBar__input-text" type="text" name="searchBar" placeholder="¿Que estas buscando?">
+        <button class="searchBar__button" type="submit">Buscar</button>
+      </form>
+
+      <!-- Menu de navegacion -->
+      <nav class="menu__navBar">
+        <ul class="navBar__options" type="none">
+          <li class="navBar__list-option"><a class="navBar__option" href="/#cajaherramientas">Herramientas</a></li>
+          <li class="navBar__list-option"><a class="navBar__option" href="/products">Productos</a></li>
+          <li class="navBar__list-option"><a class="navBar__option" href="/#ofertas">OFERTAS</a></li>
+          <li class="navBar__list-option"><a class="navBar__option" href="/#novedades">Novedades</a></li>
+          <li class="navBar__list-option"><a class="navBar__option" href="/#institucional">Institucional</a></li>
+          <li class="navBar__list-option"><a class="navBar__option" href="/#contacto">Contactanos</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+
+  <!-- boton flotante carrito -->
+  <div class="header__cart--pill">
+    <a class="cart--pill__link" href="/products/cart" title="Tu carrito">
+      <i class="cart--pill__icon fa-solid fa-cart-shopping"></i>
+    </a>
+  </div>
+</header>
